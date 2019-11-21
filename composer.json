@@ -1,0 +1,24 @@
+{
+  "name": "crazycater/tree",
+  "description": "tree",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "crazycater",
+      "email": "sqwindows@qq.com"
+    }
+  ],
+  "keywords": [
+    "tree",
+    "PHP列表数据转树型结构",
+    "树型"
+  ],
+  "require": {
+    "php": ">=5.4"
+  },
+  "autoload": {
+    "psr-4": {
+      "CrazyCater\\": "src"
+    }
+  }
+}
