@@ -15,6 +15,30 @@ class Tree
      * @param integer $level 进行递归时传递用的参数
      */
     private $formatTree; //用于树型数组完成递归格式的全局变量
+    protected static $instance;
+
+    /**
+     * 构造函数
+     * @author liuhuan
+     * @access protected
+     * @param array $options 参数
+     */
+    public function __construct($options = [])
+    {
+        foreach ($options as $name => $item) {
+            if (property_exists($this, $name)) {
+                $this->$name = $item;
+            }
+        }
+    }
+
+    public static function getInstance($options = [])
+    {
+        if (is_null(self::$instance)) {
+            self::$instance = new static($options);
+        }
+        return self::$instance;
+    }
 
     private function _toFormatTree($list, $level = 0, $title = 'title')
     {
